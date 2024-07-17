@@ -18,12 +18,14 @@ const Add = async () => {
             
         }
 
-        const {data, error} = await supabase.from("Pantry").insert(stuff)
+        const {error} = await supabase.from("Pantry").insert(stuff)
         
         if(error) {
             console.log("error", {error})
-            return
+            return 
         }
+
+        
 
     }
 
@@ -34,7 +36,7 @@ const Add = async () => {
             <form action={Submit} className="flex flex-col w-screen h-screen justify-center items-center space-y-4">
                 <Input className="w-2/3" name="Name" required placeholder="Item Name"/>
                 <Input className="w-2/3" name="Quantity" required placeholder="Quantity" type="number"/>
-                <Input className="w-2/3" name="Price" required placeholder="Price per Unit" type="number"/>
+                <Input className="w-2/3" name="Price" required placeholder="Price per Unit"/>
                 <Button type="submit">Add</Button>
             </form>
         </>
