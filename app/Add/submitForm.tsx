@@ -1,7 +1,7 @@
 "use server"
 
 import { createClient } from "@/utils/supabase/server"
-
+import { redirect } from "next/navigation";
 export const submitForm = async (formData: FormData) => {
     // Create a Supabase client
     const supabase = createClient()
@@ -18,4 +18,6 @@ export const submitForm = async (formData: FormData) => {
         console.log("error", { error })
         throw error
     }
+
+    redirect("/")
 };

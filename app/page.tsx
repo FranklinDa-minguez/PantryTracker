@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         {data && data.map((x:any) =>
           <>
-          <Rowdata Name={x.Name} Quantity={x.Quantity} Price={x.Price}/>
+          <Rowdata Name={x.Name} Quantity={x.Quantity} Price={x.Price} Id={x.id}/>
           </>
           )
         }
