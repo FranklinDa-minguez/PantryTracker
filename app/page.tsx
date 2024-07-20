@@ -1,8 +1,9 @@
-"use server"
+
 import { createClient } from "@/utils/supabase/client";
 import Rowdata from "@/components/rowdata";
 import { redirect } from "next/navigation";
 
+export const revalidate = 0;
 export default async function Home() {
 
   const supabase = createClient()
@@ -12,7 +13,7 @@ export default async function Home() {
     redirect("/Add")
   }
   const fetchpantrydata = async () => {
-      const {data} = await supabase.from("Pantry").select("*")
+      const {data} = await supabase.from("Pantry").select()
       console.log(data);
       return data;
   }
@@ -27,7 +28,7 @@ export default async function Home() {
         </form>
         {data && data?.map((x:any) =>
           <>
-            <Rowdata Name={x?.Name} Quantity={x?.Quantity} Price={x?.Price} Id={x?.id}/>
+            <Rowdata Name={x.Name} Quantity={x.Quantity} Price={x.Price} Id={x.id}/>
           </>
           )
         }
