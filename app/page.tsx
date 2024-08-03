@@ -22,10 +22,17 @@ export default async function Home() {
   return (
     <>
       <h1 className=" text-center">PANTRY MANAGER</h1>
-      <div className=" flex flex-col h-1/2 w-10/12 m-auto">
+      <div className=" flex flex-col h-1/2 w-2/3 m-auto">
         <form className=" flex justify-center border border-black ">
           <button formAction={routeAdd}>Add</button>
         </form>
+        <div className="flex justify-around w-full border border-black">
+            <p>Item Name</p>
+            <p>Quantity</p>
+            <p className=" mr-7">Price Per Unit</p>
+            <p></p>
+            <p></p>
+          </div>
         {data && data?.map((x:any) =>
           <>
             <Rowdata Name={x.Name} Quantity={x.Quantity} Price={x.Price} Id={x.id}/>

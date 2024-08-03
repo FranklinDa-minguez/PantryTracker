@@ -1,7 +1,6 @@
 const Update = () => {
     return (
         <>
-        
         </>
     )
 }

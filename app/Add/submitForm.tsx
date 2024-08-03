@@ -2,7 +2,7 @@
 
 import { createClient } from "@/utils/supabase/server"
 import { redirect } from "next/navigation";
-export const submitForm = async (formData: FormData) => {
+export const AddsubmitForm = async (formData: FormData) => {
     // Create a Supabase client
     const supabase = createClient()
 
